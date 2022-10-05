@@ -12,8 +12,10 @@ authenticated do
   root :to => 'dashboard#home'
 end
 
-unauthenticated do
-  root :to => 'home#index'
-end
+# unauthenticated do
+#   root :to => 'home#index'
+# end
+
+
 
 end
