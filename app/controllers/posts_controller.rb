@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     end
 
    def destory
+     @post.delete
    end
 
     private
