@@ -10,7 +10,7 @@ devise_for :users, controllers: { sessions: 'users/sessions' }
 
 
 authenticated do
-  root :to => 'dashboard#home'
+  root :to => 'dashboard#index'
 end
 
 # unauthenticated do
