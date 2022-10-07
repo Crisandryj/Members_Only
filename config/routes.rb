@@ -10,12 +10,12 @@ devise_for :users, controllers: { sessions: 'users/sessions' }
 
 
 authenticated do
-  root :to => 'dashboard#index'
+  root :to => 'dashboard#index',:as => "authenticated_root"
 end
 
-# unauthenticated do
-#   root :to => 'home#index'
-# end
+unauthenticated do
+  root :to => 'home#index'
+end
 
 
 

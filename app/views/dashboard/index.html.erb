@@ -1,5 +1,7 @@
 <h1>Dashboard</h1>
-<%= @user %>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
+<%= @user.email %>
 
 <% @posts.each do |post|%>
 <div><%= post.title%></div>
