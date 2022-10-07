@@ -7,17 +7,18 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to root_path, notice: 'Post was successfully created.' }
+        redirect_to root_path, notice: 'Post was successfully created.'
       else
         @posts = Post.all
         flash[:alert] = @post.errors.count
-        format.html { render :index, alert: 'Post was not created.' }
+        redirect_to root_path, alert: 'Post was not created.'
       end
     end
 
+
+    def show
+      @post = Post.find(params[:id])
     end
 
    def destory
